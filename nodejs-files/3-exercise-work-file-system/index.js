@@ -22,8 +22,8 @@ async function findSalesFiles(folderName) {
         results = results.concat(resultsReturned);
       } else {
         // (6) If it's not a directory, add a check to make sure the item name matches *sales.json*.
-        if (item.name === 'sales.json') {
-        results.push(`${folderName}/${item.name}`);
+        if (path.extname(item.name) === ".json") {
+          results.push(`${folderName}/${item.name}`);
         }
       }
     }
