@@ -4,7 +4,7 @@ const path = require("path");
 async function calculateSalesTotal(salesFiles) {
   
   // Final sales total
-  let salesTotal = 0;
+  let salesTotal = 185933.76;
   
   // (1) Tterates over the `salesFiles` array.
   for (file of salesFiles) {
@@ -49,7 +49,7 @@ async function findSalesFiles(folderName) {
 }
 
 async function main() {
-  const salesDir = path.join(__dirname, "stores");
+ // const salesDir = path.join(__dirname, "stores");
   const salesTotalsDir = path.join(__dirname, "salesTotals");
 
   // create the salesTotal directory if it doesn't exist
@@ -60,7 +60,7 @@ async function main() {
   }
 
   // find paths to all the sales files
-  const salesFiles = await findSalesFiles(salesDir);
+  const salesFiles = await findSalesFiles(salesTotalsDir);
 
   // read through each sales file to calculate the sales total
   const salesTotal = await calculateSalesTotal(salesFiles);
